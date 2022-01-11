@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaptoreumWallet.Wallet", "R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaptoreumWallet.Common", "RaptoreumWallet.Common\RaptoreumWallet.Common.csproj", "{C42B6DCD-C58B-4504-A624-010F33AA4F3A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Targets", "Targets", "{60BB9474-6E19-40BC-9D8E-2A55356BF041}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -252,6 +254,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1ADA4358-5FB2-4C4D-9DFB-25D0CEF3DDAB} = {60BB9474-6E19-40BC-9D8E-2A55356BF041}
+		{FC03AF3C-A623-4022-A9C9-2135C56F6F9A} = {60BB9474-6E19-40BC-9D8E-2A55356BF041}
+		{FD29F376-CFEC-4F5A-8A83-4C76E9EE9C44} = {60BB9474-6E19-40BC-9D8E-2A55356BF041}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C782D53-AD35-43DF-B620-5CF718529B5D}

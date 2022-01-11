@@ -11,7 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2291" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\Fonts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RaptoreumWallet.Api\RaptoreumWallet.Api.csproj" />
+    <ProjectReference Include="..\RaptoreumWallet.Common\RaptoreumWallet.Common.csproj" />
+    <ProjectReference Include="..\RaptoreumWallet.Wallet\RaptoreumWallet.Wallet.csproj" />
   </ItemGroup>
 </Project>
