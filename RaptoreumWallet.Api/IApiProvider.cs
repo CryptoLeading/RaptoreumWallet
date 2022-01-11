@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Net.Http;
-using EduGame.Api; 
+using RaptoreumWallet.Api; 
 using Prism.DryIoc;
 using Prism.Ioc;
 using RaptoreumWallet.Api.Utils;

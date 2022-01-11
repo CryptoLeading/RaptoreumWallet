@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EduGame.Apis.Dtos
+namespace RaptoreumWallet.Apis.Dtos
 {
     public class ResultDto<T>
     {

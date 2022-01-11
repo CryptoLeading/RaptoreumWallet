@@ -1,9 +1,9 @@
 ﻿using System; 
-using EduGame.Api; 
+using RaptoreumWallet.Api; 
 using Prism.Ioc;
 using Prism.Modularity;
 
-namespace EduGame.Api
+namespace RaptoreumWallet.Api
 {
     public class RaptoreumWalletApiModule : IModule
     {
