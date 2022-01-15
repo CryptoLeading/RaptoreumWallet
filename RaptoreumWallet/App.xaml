@@ -14,12 +14,7 @@
                 <style:ResourceStyles />
                 <!--<style:Converters />-->
 
-            </ResourceDictionary.MergedDictionaries>
-            <!--<sh:SingleShade
-                x:Key="ShadowPrimary" 
-                Opacity="0.5"
-                Offset="0,8"
-                Color="{StaticResource ColorPrimary}" />-->
+            </ResourceDictionary.MergedDictionaries> 
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

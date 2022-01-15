@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Prism;
+using Prism.Ioc;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,7 +23,13 @@ namespace RaptoreumWallet.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new RaptoreumWallet.App());
+            LoadApplication(new RaptoreumWallet.App(new UWPPlatform()));
+        }
+    }
+    public class UWPPlatform : IPlatformInitializer
+    {
+        public void RegisterTypes(IContainerRegistry containerRegistry)
+        {
         }
     }
 }
