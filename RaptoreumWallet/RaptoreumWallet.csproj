@@ -36,4 +36,10 @@
     <ProjectReference Include="..\RaptoreumWallet.Common\RaptoreumWallet.Common.csproj" />
     <ProjectReference Include="..\RaptoreumWallet.Wallet\RaptoreumWallet.Wallet.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Controls\UnderlineButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

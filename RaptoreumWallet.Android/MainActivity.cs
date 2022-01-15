@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.OS;
 using Prism;
 using Prism.Ioc;
+using Acr.UserDialogs;
 
 namespace RaptoreumWallet.Droid
 {
@@ -17,7 +18,8 @@ namespace RaptoreumWallet.Droid
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            global::Xamarin.Forms.Forms.Init(this, savedInstanceState); 
+            InitPlugin();
             LoadApplication(new App(new AndroidPlatform()));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -32,6 +34,11 @@ namespace RaptoreumWallet.Droid
             public void RegisterTypes(IContainerRegistry containerRegistry)
             {
             }
+        }
+
+        void InitPlugin()
+        {
+            UserDialogs.Init(this);
         }
     }
 }

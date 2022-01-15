@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RaptoreumWallet.Controls.UnderlineButton">
+    <Label
+        x:Name="lblText"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        Style="{StaticResource NormalLabel}" />
+    <BoxView
+        VerticalOptions="End"
+        CornerRadius="2"
+        HeightRequest="4"
+        Background="{StaticResource PrimaryColor}"
+        WidthRequest="{Binding Source={Reference lblText},Path=Width}" />
+    <Grid.GestureRecognizers>
+        <TapGestureRecognizer
+            Tapped="TapGestureRecognizer_Tapped" />
+    </Grid.GestureRecognizers>
+</Grid>
