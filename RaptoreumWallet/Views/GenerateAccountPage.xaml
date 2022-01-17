@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RaptoreumWallet.Views.GenerateAccountPage"
+    xmlns:control="clr-namespace:RaptoreumWallet.Controls"
+    xmlns:converter="clr-namespace:RaptoreumWallet.Converters">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:ChipColorConverter
+                x:Key="ChipColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid
+        RowDefinitions="88,48,*,80">
+        <Label
+            Margin="24,0"
+            Style="{StaticResource LargeLabel}"
+            Text="Generate Account" />
+        <control:UnderlineButton
+            Grid.Row="1"
+            Margin="24,0"
+            Text="Backup Manually"
+            HorizontalOptions="Start" />
+        <ImageButton
+            Grid.Row="1"
+            Margin="0,0,24,0"
+            WidthRequest="48"
+            CornerRadius="16"
+            Source="ic_copy.png"
+            Padding="12"
+            BackgroundColor="{StaticResource SurfaceColor}"
+            HorizontalOptions="End" />
+
+        <FlexLayout
+            Margin="24,12,24,0"
+            BindableLayout.ItemsSource="{Binding Words}"
+            Wrap="Wrap"
+            AlignContent="Start"
+            JustifyContent="Center"
+            Grid.Row="2">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <control:ChipView
+                        Margin="8"
+                        Status="{Binding Index}"
+                        Text="{Binding Word}"
+                        Color="{Binding Index,Converter={StaticResource ChipColorConverter}}" />
+
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </FlexLayout>
+ 
+        <Button
+            Margin="24,8"
+            Grid.Row="3"
+            CornerRadius="24"
+            VerticalOptions="Start"
+            Style="{StaticResource ButtonPrimary}"  
+            Text="Continue" />
+    </Grid>
+</ContentPage>

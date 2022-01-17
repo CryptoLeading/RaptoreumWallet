@@ -23,7 +23,7 @@ namespace RaptoreumWallet.Common.Styles
         public static double MediumIconSize = 16;
         public static double ShadowOffsetX = 0;
         public static double ShadowOffsetY = 0;
-        public static double ShadowRadius = 12;
+        public static double ShadowRadius = 8;
     }
     public class ResourceDimensions : ResourceDictionary
     {

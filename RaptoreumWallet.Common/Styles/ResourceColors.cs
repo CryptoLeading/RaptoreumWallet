@@ -14,7 +14,7 @@ namespace RaptoreumWallet.Common.Styles
         public static Color GreenColor = Color.FromHex("#4DB883");
         public static Color RedColor = Color.FromHex("#D30E0E");
         public static Color OrangeColor = Color.FromHex("#D8691C");
-        public static Color ShadowColor = Color.FromRgba(0, 0, 0, 10);
+        public static Color ShadowColor = Color.FromRgba(0, 0, 0, 5);
 
         public static Brush PrimaryColor = new LinearGradientBrush
         {

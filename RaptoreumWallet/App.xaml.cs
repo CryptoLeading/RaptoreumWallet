@@ -16,6 +16,9 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using RaptoreumWallet.Views;
 using Xamarin.CommunityToolkit.Effects;
+using RaptoreumWallet.ViewModels;
+using Prism.Behaviors;
+using RaptoreumWallet.Common.Base;
 
 namespace RaptoreumWallet
 {
@@ -34,8 +37,7 @@ namespace RaptoreumWallet
         {
             InitializeComponent();
             VersionTracking.Track();
-            //var result = await NavigationService.NavigateAsync(Routes.Start);
-            MainPage = new StartPage();
+            var result = await NavigationService.NavigateAsync(Routes.GenerateAccount);
         }
 
         protected override void OnStart()
@@ -72,12 +74,14 @@ namespace RaptoreumWallet
         void RegisterForNavigation(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<StartPage>(); 
+            containerRegistry.RegisterForNavigation<StartPage>();
+            containerRegistry.RegisterForNavigation<GenerateAccountPage, GenerateAccountViewModel>();
         }
 
         void RegisterService(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterInstance<IResourceManagerProvider>(this); 
+            containerRegistry.RegisterInstance<IResourceManagerProvider>(this);
+            containerRegistry.RegisterSingleton<IPageBehaviorFactory, RPageBehaviorFactory>();
             //containerRegistry.RegisterPopupNavigationService();
 
         }
@@ -91,6 +95,7 @@ namespace RaptoreumWallet
     {
         public const string Welcome = "";
         public const string Start = nameof(StartPage);
+        public const string GenerateAccount = nameof(GenerateAccountPage);
     }
 
     public class NavigationKey
