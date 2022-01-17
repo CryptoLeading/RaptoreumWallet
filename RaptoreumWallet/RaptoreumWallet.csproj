@@ -28,17 +28,18 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\RaptoreumWallet.Api\RaptoreumWallet.Api.csproj" />
     <ProjectReference Include="..\RaptoreumWallet.Common\RaptoreumWallet.Common.csproj" />
-    <ProjectReference Include="..\RaptoreumWallet.Wallet\RaptoreumWallet.Wallet.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Controls\UnderlineButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\StartPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

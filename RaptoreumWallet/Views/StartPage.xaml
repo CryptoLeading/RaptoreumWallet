@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RaptoreumWallet.Views.StartPage"
+    xmlns:control="clr-namespace:RaptoreumWallet.Controls"
+    xmlns:effect="clr-namespace:Xamarin.CommunityToolkit.Effects;assembly=Xamarin.CommunityToolkit" 
+    effect:StatusBarEffect.Style="DarkContent">
+    <Grid
+        x:Name="container">
+        <Image
+            VerticalOptions="Center"
+            HeightRequest="248"
+            Source="img_logo" /> 
+        <BoxView
+            Grid.Row="1"
+            Style="{StaticResource BoxShadow}"  
+            CornerRadius="24,24,0,0" />
+ 
+        <StackLayout
+            Grid.Row="1"
+            Padding="0,0,0,16"
+            Spacing="16">
+            <Label
+                Margin="32"
+                VerticalOptions="StartAndExpand"
+                Style="{StaticResource LargeLabel}"
+                Text="Welcome to Raptoreum Wallet" />
+            <Button
+                Style="{StaticResource ButtonSecondary}"
+                Text="Unlock" />
+            <Button
+                Style="{StaticResource ButtonPrimary}"
+                Text="Create new wallet" />
+            <control:UnderlineButton
+                HorizontalOptions="Center"
+                RowSpacing="0"
+                HeightRequest="48"
+                Text="I aredy have a wallet" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

@@ -14,6 +14,8 @@ using System.Resources;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using RaptoreumWallet.Views;
+using Xamarin.CommunityToolkit.Effects;
 
 namespace RaptoreumWallet
 {
@@ -32,12 +34,14 @@ namespace RaptoreumWallet
         {
             InitializeComponent();
             VersionTracking.Track();
-            var result = await NavigationService.NavigateAsync(Routes.Welcome);
+            //var result = await NavigationService.NavigateAsync(Routes.Start);
+            MainPage = new StartPage();
         }
 
         protected override void OnStart()
         {
             base.OnStart();
+            SetValue(StatusBarEffect.ColorProperty, Color.Yellow);
             // AppCenter.Start("android=ff9085a0-5b3d-427f-8003-4005cfef9339;ios=7a5ae654-4193-4e5e-9525-663f5ededef0", typeof(Analytics), typeof(Crashes)); 
         }
 
@@ -67,8 +71,8 @@ namespace RaptoreumWallet
 
         void RegisterForNavigation(IContainerRegistry containerRegistry)
         {
-            //containerRegistry.RegisterForNavigation<SharedTransitionNavigationPage>();
-            //containerRegistry.RegisterForNavigation<SignInPage, SignInViewModel>(); 
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<StartPage>(); 
         }
 
         void RegisterService(IContainerRegistry containerRegistry)
@@ -86,6 +90,7 @@ namespace RaptoreumWallet
     public sealed partial class Routes
     {
         public const string Welcome = "";
+        public const string Start = nameof(StartPage);
     }
 
     public class NavigationKey

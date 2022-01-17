@@ -10,12 +10,28 @@ using Xamarin.CommunityToolkit.Effects;
 namespace RaptoreumWallet.Common.Styles
 {
     public class CommonStyles
-    {
+    { 
         public static readonly Style ContainerEditor = Extensions.Styles.CreateStyle<Frame>()
             .Set(Frame.CornerRadiusProperty, 0)
             .Set(Frame.BackgroundColorProperty, Colors.SurfaceColor)
             .Set(Frame.PaddingProperty, new Thickness(12, 0))
             .Set(Frame.HasShadowProperty, false);
+        
+        public static readonly Style ContainerShadow = Extensions.Styles.CreateStyle<Frame>()
+            .Set(Frame.CornerRadiusProperty, 0)
+            .Set(Frame.BackgroundColorProperty, Colors.SurfaceColor)
+            .Set(ShadowEffect.ColorProperty, Colors.ShadowColor)
+            .Set(ShadowEffect.RadiusProperty, Dimensions.ShadowRadius)
+            .Set(ShadowEffect.OffsetXProperty, Dimensions.ShadowOffsetX)
+            .Set(ShadowEffect.OffsetYProperty, Dimensions.ShadowOffsetY)
+            .Set(Frame.HasShadowProperty, false);
+
+        public static readonly Style BoxShadow = Extensions.Styles.CreateStyle<BoxView>()
+            
+           .Set(ShadowEffect.ColorProperty, Colors.ShadowColor)
+           .Set(ShadowEffect.RadiusProperty, Dimensions.ShadowRadius)
+           .Set(ShadowEffect.OffsetXProperty, Dimensions.ShadowOffsetX)
+           .Set(ShadowEffect.OffsetYProperty, Dimensions.ShadowOffsetY) ;
 
         public static readonly Style BackButton = Extensions.Styles.CreateStyle<ImageButton>()
            .Set(View.HeightRequestProperty, Dimensions.ButtonHeight)
@@ -28,7 +44,10 @@ namespace RaptoreumWallet.Common.Styles
 
         public static readonly Style ButtonBase = Extensions.Styles.CreateStyle<Button>()
             .Set(View.VerticalOptionsProperty, LayoutOptions.Center)
+            .Set(View.HorizontalOptionsProperty, LayoutOptions.Center)
             .Set(View.HeightRequestProperty, Dimensions.ButtonHeight)
+            .Set(View.WidthRequestProperty, Dimensions.ButtonWidth)
+            .Set(Button.CornerRadiusProperty, Dimensions.ButtonRadius)
             .Set(Button.FontFamilyProperty, Strings.FontRegular)
             .Set(Button.FontSizeProperty, Dimensions.FontSizeNormal)
             .Set(Button.TextTransformProperty, TextTransform.None);
@@ -42,6 +61,7 @@ namespace RaptoreumWallet.Common.Styles
             .BaseOn(ButtonBase)
             .Set(Button.TextColorProperty, Colors.OrangeColor)
             .Set(Button.BackgroundColorProperty, Color.Transparent)
+            .Set(Button.BorderWidthProperty, 1)
             .Set(Button.BorderColorProperty, Colors.OrangeColor);
 
         public static readonly Style FrameBase = Extensions.Styles.CreateStyle<Frame>()
