@@ -4,19 +4,20 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="RaptoreumWallet.Views.StartPage"
     xmlns:control="clr-namespace:RaptoreumWallet.Controls"
-    xmlns:effect="clr-namespace:Xamarin.CommunityToolkit.Effects;assembly=Xamarin.CommunityToolkit" 
+    xmlns:effect="clr-namespace:Xamarin.CommunityToolkit.Effects;assembly=Xamarin.CommunityToolkit"
     effect:StatusBarEffect.Style="DarkContent">
     <Grid
         x:Name="container">
         <Image
             VerticalOptions="Center"
             HeightRequest="248"
-            Source="img_logo" /> 
+            Source="img_logo" />
+ 
         <BoxView
             Grid.Row="1"
-            Style="{StaticResource BoxShadow}"  
+            Style="{StaticResource BoxShadow}"
             CornerRadius="24,24,0,0" />
- 
+
         <StackLayout
             Grid.Row="1"
             Padding="0,0,0,16"

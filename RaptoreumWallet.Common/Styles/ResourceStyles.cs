@@ -10,16 +10,17 @@ using Xamarin.CommunityToolkit.Effects;
 namespace RaptoreumWallet.Common.Styles
 {
     public class CommonStyles
-    { 
+    {
         public static readonly Style ContainerEditor = Extensions.Styles.CreateStyle<Frame>()
             .Set(Frame.CornerRadiusProperty, 0)
             .Set(Frame.BackgroundColorProperty, Colors.SurfaceColor)
             .Set(Frame.PaddingProperty, new Thickness(12, 0))
             .Set(Frame.HasShadowProperty, false);
-        
+
         public static readonly Style ContainerShadow = Extensions.Styles.CreateStyle<Frame>()
             .Set(Frame.CornerRadiusProperty, 0)
             .Set(Frame.BackgroundColorProperty, Colors.SurfaceColor)
+            .Set(Frame.PaddingProperty, new Thickness(0))
             .Set(ShadowEffect.ColorProperty, Colors.ShadowColor)
             .Set(ShadowEffect.RadiusProperty, Dimensions.ShadowRadius)
             .Set(ShadowEffect.OffsetXProperty, Dimensions.ShadowOffsetX)
@@ -27,11 +28,11 @@ namespace RaptoreumWallet.Common.Styles
             .Set(Frame.HasShadowProperty, false);
 
         public static readonly Style BoxShadow = Extensions.Styles.CreateStyle<BoxView>()
-            
+
            .Set(ShadowEffect.ColorProperty, Colors.ShadowColor)
            .Set(ShadowEffect.RadiusProperty, Dimensions.ShadowRadius)
            .Set(ShadowEffect.OffsetXProperty, Dimensions.ShadowOffsetX)
-           .Set(ShadowEffect.OffsetYProperty, Dimensions.ShadowOffsetY) ;
+           .Set(ShadowEffect.OffsetYProperty, Dimensions.ShadowOffsetY);
 
         public static readonly Style BackButton = Extensions.Styles.CreateStyle<ImageButton>()
            .Set(View.HeightRequestProperty, Dimensions.ButtonHeight)

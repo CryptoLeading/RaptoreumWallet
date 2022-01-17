@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Frame
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RaptoreumWallet.Controls.ChipView"
+    Margin="0"
+    x:Name="root"
+    CornerRadius="20"
+    HeightRequest="40"
+    Style="{StaticResource ContainerShadow}"
+    Padding="0">
+    <Grid
+        x:Name="container"
+        ColumnSpacing="0"
+        ColumnDefinitions="40,*">
+        <BoxView
+            HeightRequest="28"
+            WidthRequest="28"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            CornerRadius="14"
+            BackgroundColor="{Binding Source={Reference root},Path=Color}" />
+        <Label
+            Style="{StaticResource DescriptionLabel}"
+            TextColor="{StaticResource SurfaceColor}"
+            Text="{Binding Source={Reference root},Path=Status}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center" />
+
+        <Label
+            Margin="0,0,12,0"
+            Grid.Column="1"
+            Style="{StaticResource DescriptionLabel}"
+            TextColor="{StaticResource TextPrimaryColor}"
+            Text="{Binding Source={Reference root},Path=Text}"
+            HorizontalOptions="Start"
+            VerticalOptions="Center" />
+    </Grid>
+    <Frame.GestureRecognizers>
+        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+    </Frame.GestureRecognizers>
+</Frame>
