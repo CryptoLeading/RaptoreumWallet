@@ -145,4 +145,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_copy%402x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_next%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_next%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_next.png" />
+  </ItemGroup>
 </Project>

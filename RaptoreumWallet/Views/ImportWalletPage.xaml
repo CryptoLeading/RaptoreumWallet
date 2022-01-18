@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RaptoreumWallet.Views.ImportWalletPage"
+    xmlns:control="clr-namespace:RaptoreumWallet.Controls">
+    <Grid
+        RowDefinitions="88,48,*,80">
+        <Label
+            Margin="24,0"
+            Style="{StaticResource LargeLabel}"
+            Text="Recovery" />
+        <control:UnderlineButton
+            Grid.Row="1"
+            Margin="24,0"
+            Text="Using Private key"
+            HorizontalOptions="Start"
+            Command="{Binding ChangeTypeCommand}">
+            <control:UnderlineButton.Triggers>
+                <DataTrigger
+                    Binding="{Binding UseMnemoic}"
+                    TargetType="control:UnderlineButton"
+                    Value="False">
+                    <Setter
+                        Property="Text"
+                        Value="Using Mnemonic" />
+                </DataTrigger>
+            </control:UnderlineButton.Triggers>
+        </control:UnderlineButton>
+        <ImageButton
+            Grid.Row="1"
+            Margin="0,0,24,0"
+            WidthRequest="48"
+            CornerRadius="16"
+            Source="ic_next.png"
+            Padding="12"
+            BackgroundColor="{StaticResource SurfaceColor}"
+            Command="{Binding ChangeTypeCommand}"
+            HorizontalOptions="End" />
+        <Frame
+            VerticalOptions="Start"
+            Style="{StaticResource ContainerEditor}"
+            Grid.Row="2"
+            Margin="24">
+            <Grid>
+                <BoxView
+                    HeightRequest="200" />
+                <Editor
+                    Margin="12,8"
+                    AutoSize="TextChanges"
+                    Placeholder="Import your mnemonic">
+                    <Editor.Triggers>
+                        <DataTrigger
+                            Binding="{Binding UseMnemoic}"
+                            TargetType="Editor"
+                            Value="False">
+                            <Setter
+                                Property="Placeholder"
+                                Value="Import your private key" />
+                        </DataTrigger>
+                    </Editor.Triggers>
+                </Editor>
+            </Grid>
+        </Frame>
+        <Button
+            Margin="24,8"
+            Grid.Row="3"
+            CornerRadius="24"
+            VerticalOptions="Start"
+            Style="{StaticResource ButtonPrimary}"
+            Text="Continue" />
+    </Grid>
+</ContentPage>

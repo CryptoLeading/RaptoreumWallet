@@ -11,10 +11,20 @@ namespace RaptoreumWallet.Common.Styles
 {
     public class CommonStyles
     {
+        public static readonly Style EditorBase = Extensions.Styles.CreateStyle<Editor>()
+            .Set(Editor.FontFamilyProperty, Strings.FontRegular)
+            .Set(Editor.FontSizeProperty, Dimensions.FontSizeNormal)
+            .Set(Editor.TextColorProperty,Colors.TextPrimaryColor)
+            .Set(Editor.PlaceholderColorProperty,Colors.TextSecondaryColor)
+            .Set(Editor.BackgroundColorProperty, Color.Transparent);
+
         public static readonly Style ContainerEditor = Extensions.Styles.CreateStyle<Frame>()
-            .Set(Frame.CornerRadiusProperty, 0)
-            .Set(Frame.BackgroundColorProperty, Colors.SurfaceColor)
-            .Set(Frame.PaddingProperty, new Thickness(12, 0))
+            .Set(Frame.CornerRadiusProperty, 4)
+            .Set(Frame.BackgroundColorProperty, Colors.SurfaceColor) 
+            .Set(ShadowEffect.ColorProperty, Colors.ShadowColor)
+            .Set(ShadowEffect.RadiusProperty, Dimensions.ShadowRadius)
+            .Set(ShadowEffect.OffsetXProperty, Dimensions.ShadowOffsetX)
+            .Set(ShadowEffect.OffsetYProperty, Dimensions.ShadowOffsetY)
             .Set(Frame.HasShadowProperty, false);
 
         public static readonly Style ContainerShadow = Extensions.Styles.CreateStyle<Frame>()
@@ -112,6 +122,7 @@ namespace RaptoreumWallet.Common.Styles
             Add(CommonStyles.FrameBase.TargetType.FullName, CommonStyles.FrameBase);
             Add(CommonStyles.ButtonBase.TargetType.FullName, CommonStyles.ButtonBase);
             Add(CommonStyles.ButtonImageBase.TargetType.FullName, CommonStyles.ButtonImageBase);
+            Add(CommonStyles.EditorBase.TargetType.FullName, CommonStyles.EditorBase);
             typeof(LabelStyles).GetFieldValues<Style>().ForEach(d => Add(d.Key, d.Value));
             typeof(CommonStyles).GetFieldValues<Style>().ForEach(d => Add(d.Key, d.Value));
         }

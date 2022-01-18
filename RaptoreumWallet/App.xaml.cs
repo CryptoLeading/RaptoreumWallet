@@ -37,7 +37,7 @@ namespace RaptoreumWallet
         {
             InitializeComponent();
             VersionTracking.Track();
-            var result = await NavigationService.NavigateAsync(Routes.GenerateAccount);
+            var result = await NavigationService.NavigateAsync(Routes.ImportWallet);
         }
 
         protected override void OnStart()
@@ -76,6 +76,7 @@ namespace RaptoreumWallet
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<StartPage>();
             containerRegistry.RegisterForNavigation<GenerateAccountPage, GenerateAccountViewModel>();
+            containerRegistry.RegisterForNavigation<ImportWalletPage, ImportWaleltViewModel>();
         }
 
         void RegisterService(IContainerRegistry containerRegistry)
@@ -96,6 +97,7 @@ namespace RaptoreumWallet
         public const string Welcome = "";
         public const string Start = nameof(StartPage);
         public const string GenerateAccount = nameof(GenerateAccountPage);
+        public const string ImportWallet = nameof(ImportWalletPage);
     }
 
     public class NavigationKey
