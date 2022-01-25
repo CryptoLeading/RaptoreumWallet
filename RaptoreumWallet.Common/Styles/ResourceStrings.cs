@@ -9,7 +9,7 @@ namespace RaptoreumWallet.Common.Styles
 {
     public class Strings
     {
-        public static string FontRegular = "JosefinSansRegular";
+        public static string FontRegular = "RubikRegular";
         //public static string FontBold = "SourceSerifProBold";
         //public static string FontLight = "SourceSerifProLight"; 
     }
