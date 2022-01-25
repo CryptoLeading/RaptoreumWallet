@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RaptoreumWallet.Views.ConfirmPinCodePage"
+    xmlns:control="clr-namespace:RaptoreumWallet.Controls">
+    <Grid
+        RowDefinitions="88,40,*,80">
+        <Label
+            Margin="24,0"
+            Style="{StaticResource LargeLabel}"
+            Text="Confirm Your Pin" />
+
+        <control:PinIndicatorView
+            Grid.Row="1"
+            HorizontalOptions="Center"
+            SelectedColor="{StaticResource PrimaryColor}"
+            Pin="{Binding Pin}" />
+
+        <control:NumPadView
+            Grid.Row="2"
+            RowSpacing="16"
+            ColumnSpacing="16"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Command="{Binding SelectCommand}"
+            ActionCommand="{Binding ActionCommand}" />
+        <Button
+            Margin="24,8"
+            Grid.Row="3"
+            CornerRadius="24"
+            VerticalOptions="Start"
+            Style="{StaticResource ButtonPrimary}"
+            Text="Continue" />
+    </Grid>
+</ContentPage>

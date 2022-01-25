@@ -43,7 +43,7 @@ namespace RaptoreumWallet
 
         protected override void OnStart()
         {
-            base.OnStart(); 
+            base.OnStart();
             // AppCenter.Start("android=ff9085a0-5b3d-427f-8003-4005cfef9339;ios=7a5ae654-4193-4e5e-9525-663f5ededef0", typeof(Analytics), typeof(Crashes)); 
         }
 
@@ -78,6 +78,7 @@ namespace RaptoreumWallet
             containerRegistry.RegisterForNavigation<GenerateAccountPage, GenerateAccountViewModel>();
             containerRegistry.RegisterForNavigation<ImportWalletPage, ImportWaleltViewModel>();
             containerRegistry.RegisterForNavigation<SetPinCodePage, SetPinCodeViewModel>();
+            containerRegistry.RegisterForNavigation<ConfirmPinCodePage, ConfirmPinCodeViewModel>();
         }
 
         void RegisterService(IContainerRegistry containerRegistry)
@@ -100,6 +101,7 @@ namespace RaptoreumWallet
         public const string GenerateAccount = nameof(GenerateAccountPage);
         public const string ImportWallet = nameof(ImportWalletPage);
         public const string SetPinCode = nameof(SetPinCodePage);
+        public const string ConfirmPinCode = nameof(ConfirmPinCodePage);
     }
 
     public class NavigationKey
