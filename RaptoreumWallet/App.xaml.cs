@@ -19,6 +19,7 @@ using Xamarin.CommunityToolkit.Effects;
 using RaptoreumWallet.ViewModels;
 using Prism.Behaviors;
 using RaptoreumWallet.Common.Base;
+using RaptoreumWallet.Controls;
 
 namespace RaptoreumWallet
 {
@@ -37,7 +38,8 @@ namespace RaptoreumWallet
         {
             InitializeComponent();
             VersionTracking.Track();
-            var result = await NavigationService.NavigateAsync(Routes.ImportWallet);
+            MainPage = new ContentPage { Content = new ContentView { Content = new NumPadView { VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.Center } } };
+            //var result = await NavigationService.NavigateAsync(Routes.ImportWallet);
         }
 
         protected override void OnStart()

@@ -154,4 +154,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_next.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_backspace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_backspace%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_backspace%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_fingerprint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_fingerprint%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_fingerprint%403x.png" />
+  </ItemGroup>
 </Project>
