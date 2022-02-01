@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="RaptoreumWallet.Views.ReceivePage">
+    <Grid
+        RowDefinitions="48,*,80">
+        <Label
+            Margin="24,0"
+            Style="{StaticResource LargeLabel}"
+            Text="Receive" />
+
+        <Grid
+            Grid.Row="1"
+            ColumnSpacing="0"
+            ColumnDefinitions="*,56,72"
+            RowDefinitions="Auto,Auto,*">
+            <StackLayout
+                Margin="24,0,16,0">
+                <Label
+                    Style="{StaticResource DescriptionLabel}"
+                    Text="Label 1" />
+                <Label
+                    Style="{StaticResource NormalLabel}"
+                    Text="RD36j5RZNdXZKDgDCsmutmVf8i7HQ6gn3X" />
+                <Label
+                    Style="{StaticResource AvailabeBalanceLabel}"
+                    Text="Avaiable 124 RTM" />
+            </StackLayout>
+
+            <ImageButton
+                Style="{StaticResource IconButton}"
+                Grid.Column="1"
+                Margin="0,0,8,0"
+                Source="ic_copy.png" />
+            <ImageButton
+                Style="{StaticResource IconButton}"
+                Grid.Column="2"
+                Margin="0,0,24,0"
+                Source="ic_copy.png" />
+            <Image
+                x:Name="img"
+                HorizontalOptions="Center"
+                Margin="24"
+                WidthRequest="250"
+                HeightRequest="250"
+                Grid.Row="1" 
+                Grid.ColumnSpan="3"> 
+            </Image>
+            <Label
+                Grid.ColumnSpan="3"
+                Grid.Row="2"
+                HorizontalTextAlignment="Center"
+                Style="{StaticResource NormalLabel}"
+                TextColor="{StaticResource TextSecondaryColor}"
+                Text="Scan address to receive payment" />
+        </Grid>
+        <Button
+            Margin="24,8"
+            Grid.Row="2"
+            CornerRadius="24"
+            VerticalOptions="Start"
+            Style="{StaticResource ButtonPrimary}"
+            Text="Request" />
+    </Grid>
+</ContentPage>

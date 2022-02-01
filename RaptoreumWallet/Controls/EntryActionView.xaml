@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RaptoreumWallet.Controls.EntryActionView"
+    x:Name="root">
+    <Label
+        Style="{StaticResource DescriptionLabel}"
+        Text="{Binding Source={Reference root},Path=Label}" />
+    <Frame
+        Style="{StaticResource ContainerEntry}">
+        <Grid
+            HeightRequest="{StaticResource EntryHeight}"
+            ColumnSpacing="0"
+            ColumnDefinitions="*,48">
+            <Entry
+                Margin="16,0,4,0"
+                Text="{Binding Source={Reference root},Path=Text}" />
+            <ContentView
+                Grid.Column="1"
+                Content="{Binding Source={Reference root},Path=ActionView}"
+                x:Name="actionView">
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="TapGestureRecognizer_Tapped" />
+                </ContentView.GestureRecognizers>
+            </ContentView>
+        </Grid>
+    </Frame>
+</StackLayout>

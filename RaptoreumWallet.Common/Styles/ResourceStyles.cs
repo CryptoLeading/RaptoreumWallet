@@ -18,7 +18,15 @@ namespace RaptoreumWallet.Common.Styles
             .Set(Editor.PlaceholderColorProperty,Colors.TextSecondaryColor)
             .Set(Editor.BackgroundColorProperty, Color.Transparent);
 
+        public static readonly Style EntryBase = Extensions.Styles.CreateStyle<Entry>()
+            .Set(Entry.FontFamilyProperty, Strings.FontRegular)
+            .Set(Entry.FontSizeProperty, Dimensions.FontSizeNormal)
+            .Set(Entry.TextColorProperty, Colors.TextPrimaryColor)
+            .Set(Entry.PlaceholderColorProperty, Colors.TextSecondaryColor)
+            .Set(Entry.BackgroundColorProperty, Color.Transparent);
+
         public static readonly Style ContainerEditor = Extensions.Styles.CreateStyle<Frame>()
+            .Set(Frame.PaddingProperty, new Thickness(0))
             .Set(Frame.CornerRadiusProperty, 4)
             .Set(Frame.BackgroundColorProperty, Colors.SurfaceColor) 
             .Set(ShadowEffect.ColorProperty, Colors.ShadowColor)
@@ -26,6 +34,17 @@ namespace RaptoreumWallet.Common.Styles
             .Set(ShadowEffect.OffsetXProperty, Dimensions.ShadowOffsetX)
             .Set(ShadowEffect.OffsetYProperty, Dimensions.ShadowOffsetY)
             .Set(Frame.HasShadowProperty, false);
+
+        public static readonly Style ContainerEntry = Extensions.Styles.CreateStyle<Frame>()
+           .Set(Frame.PaddingProperty, new Thickness(0))
+           .Set(Frame.CornerRadiusProperty, 4)
+           .Set(Frame.BackgroundColorProperty, Colors.SurfaceColor)
+           .Set(ShadowEffect.ColorProperty, Colors.ShadowColor)
+           .Set(ShadowEffect.RadiusProperty, Dimensions.ShadowRadius)
+           .Set(ShadowEffect.OffsetXProperty, Dimensions.ShadowOffsetX)
+           .Set(ShadowEffect.OffsetYProperty, Dimensions.ShadowOffsetY)
+           .Set(Frame.HasShadowProperty, false);
+
 
         public static readonly Style ContainerShadow = Extensions.Styles.CreateStyle<Frame>()
             .Set(Frame.CornerRadiusProperty, 0)
@@ -66,7 +85,10 @@ namespace RaptoreumWallet.Common.Styles
         public static readonly Style ButtonPrimary = Extensions.Styles.CreateStyle<Button>()
             .BaseOn(ButtonBase)
             .Set(Button.BackgroundProperty, Colors.PrimaryColor)
-            .Set(Button.TextColorProperty, Colors.SurfaceColor);
+            .Set(Button.TextColorProperty, Colors.SurfaceColor).Set(ShadowEffect.ColorProperty, Colors.ShadowColor)
+            .Set(ShadowEffect.RadiusProperty, Dimensions.ShadowRadius)
+            .Set(ShadowEffect.OffsetXProperty, Dimensions.ShadowOffsetX)
+            .Set(ShadowEffect.OffsetYProperty, Dimensions.ShadowOffsetY);
 
         public static readonly Style ButtonSecondary = Extensions.Styles.CreateStyle<Button>()
             .BaseOn(ButtonBase)
@@ -89,6 +111,13 @@ namespace RaptoreumWallet.Common.Styles
             .Set(ShadowEffect.OffsetXProperty, Dimensions.ShadowOffsetX)
             .Set(ShadowEffect.OffsetYProperty, Dimensions.ShadowOffsetY)
             .Set(ImageButton.BackgroundColorProperty, Color.Transparent);
+
+        public static readonly Style IconButton = Extensions.Styles.CreateStyle<ImageButton>()
+           .BaseOn(ButtonImageBase)
+           .Set(View.WidthRequestProperty, Dimensions.ButtonHeight) 
+           .Set(ImageButton.CornerRadiusProperty, Dimensions.IconButtonRadius)
+           .Set(ImageButton.PaddingProperty, new Thickness(12)) 
+           .Set(ImageButton.BackgroundColorProperty, Colors.SurfaceColor);
 
     }
     public class LabelStyles
@@ -113,6 +142,10 @@ namespace RaptoreumWallet.Common.Styles
         public static readonly Style SmallLabel = Extensions.Styles.CreateStyle<Label>()
            .BaseOn(LabelBase)
            .Set(Label.FontSizeProperty, Dimensions.FontSizeSmall);
+
+        public static readonly Style AvailabeBalanceLabel = Extensions.Styles.CreateStyle<Label>()
+            .BaseOn(DescriptionLabel)
+            .Set(Label.TextColorProperty, Colors.GreenColor);
     }
 
     public class ResourceStyles : ResourceDictionary
@@ -123,6 +156,7 @@ namespace RaptoreumWallet.Common.Styles
             Add(CommonStyles.ButtonBase.TargetType.FullName, CommonStyles.ButtonBase);
             Add(CommonStyles.ButtonImageBase.TargetType.FullName, CommonStyles.ButtonImageBase);
             Add(CommonStyles.EditorBase.TargetType.FullName, CommonStyles.EditorBase);
+            Add(CommonStyles.EntryBase.TargetType.FullName, CommonStyles.EntryBase);
             typeof(LabelStyles).GetFieldValues<Style>().ForEach(d => Add(d.Key, d.Value));
             typeof(CommonStyles).GetFieldValues<Style>().ForEach(d => Add(d.Key, d.Value));
         }

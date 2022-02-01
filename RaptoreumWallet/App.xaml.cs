@@ -38,7 +38,8 @@ namespace RaptoreumWallet
         {
             InitializeComponent();
             VersionTracking.Track();
-            var result = await NavigationService.NavigateAsync(Routes.SetPinCode);
+            MainPage = new SendPage();
+            //var result = await NavigationService.NavigateAsync(Routes.Send);
         }
 
         protected override void OnStart()
@@ -79,6 +80,8 @@ namespace RaptoreumWallet
             containerRegistry.RegisterForNavigation<ImportWalletPage, ImportWaleltViewModel>();
             containerRegistry.RegisterForNavigation<SetPinCodePage, SetPinCodeViewModel>();
             containerRegistry.RegisterForNavigation<ConfirmPinCodePage, ConfirmPinCodeViewModel>();
+            containerRegistry.RegisterForNavigation<ReceivePage, ReceiveViewModel>();
+            containerRegistry.RegisterForNavigation<SendPage, SendViewModel>();
         }
 
         void RegisterService(IContainerRegistry containerRegistry)
@@ -102,6 +105,8 @@ namespace RaptoreumWallet
         public const string ImportWallet = nameof(ImportWalletPage);
         public const string SetPinCode = nameof(SetPinCodePage);
         public const string ConfirmPinCode = nameof(ConfirmPinCodePage);
+        public const string Receive = nameof(ReceivePage);
+        public const string Send = nameof(SendPage);
     }
 
     public class NavigationKey

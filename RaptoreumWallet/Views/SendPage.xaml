@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RaptoreumWallet.Views.SendPage"
+    xmlns:control="clr-namespace:RaptoreumWallet.Controls">
+    <Grid
+        ColumnSpacing="0"
+        ColumnDefinitions="*,72"
+        RowDefinitions="48,Auto,64,64,40,*,80">
+        <Label
+            Grid.ColumnSpan="2"
+            Margin="24,0"
+            Style="{StaticResource LargeLabel}"
+            Text="Send" />
+        <StackLayout
+            Grid.Row="1"
+            Margin="24,0,16,0">
+            <Label
+                Style="{StaticResource DescriptionLabel}"
+                Text="Label 1" />
+            <Label
+                Style="{StaticResource NormalLabel}"
+                Text="RD36j5RZNdXZKDgDCsmutmVf8i7HQ6gn3X" />
+            <Label
+                Style="{StaticResource AvailabeBalanceLabel}"
+                Text="Avaiable 124 RTM" />
+        </StackLayout>
+        <ImageButton
+            Style="{StaticResource IconButton}"
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="0,0,24,0"
+            Source="ic_change.png" />
+
+        <control:EntryActionView
+            Margin="24,0"
+            Grid.ColumnSpan="2"
+            Grid.Row="2"
+            Label="Address">
+            <control:EntryActionView.ActionView>
+                <Image 
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    HeightRequest="16"
+                    WidthRequest="16"
+                    Source="ic_scan" />
+            </control:EntryActionView.ActionView>
+        </control:EntryActionView>
+        <control:EntryActionView
+            Grid.Row="3"
+            Margin="24,0,0,0"
+            Label="Amount">
+            <control:EntryActionView.ActionView>
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource DescriptionLabel}"
+                    TextColor="{StaticResource TextPrimaryColor}"
+                    Text="Max" />
+            </control:EntryActionView.ActionView>
+        </control:EntryActionView>
+        <Button
+            BackgroundColor="Transparent"
+            Background="Transparent"
+            Margin="0,24,0,0"
+            Grid.Row="3"
+            Grid.Column="1"
+            Text="RTM" />
+        <Label
+            Grid.ColumnSpan="2"
+            Margin="24,0"
+            Grid.Row="4"
+            VerticalOptions="Center"
+            Style="{StaticResource NormalLabel}"
+            Text="~0.00123 USD" />
+        <Frame
+            Grid.ColumnSpan="2"
+            Grid.Row="5"
+            VerticalOptions="Start"
+            Margin="24,0">
+            <Grid
+                RowSpacing="0"
+                ColumnSpacing="0"
+                Margin="16,12"
+                ColumnDefinitions="*,*"
+                RowDefinitions="Auto,Auto">
+                <Label Text="Estimate Fee" 
+                       Style="{StaticResource DescriptionLabel}" />
+                <Label
+                    Grid.Row="1"
+                    Text="0.0123 RTM" 
+                       Style="{StaticResource NormalLabel}" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    Text="$0.00012"
+                    Style="{StaticResource NormalLabel}" />
+            </Grid>
+        </Frame>
+        <Button
+            Grid.ColumnSpan="2"
+            Margin="24,8"
+            Grid.Row="6"
+            CornerRadius="24"
+            VerticalOptions="Start"
+            Style="{StaticResource ButtonPrimary}"
+            Text="Send" />
+    </Grid>
+</ContentPage>

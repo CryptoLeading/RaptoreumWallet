@@ -6,8 +6,7 @@ using Android.Runtime;
 using Android.OS;
 using Prism;
 using Prism.Ioc;
-using Acr.UserDialogs;
-
+using Acr.UserDialogs; 
 namespace RaptoreumWallet.Droid
 {
     [Activity(Label = "RaptoreumWallet", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
@@ -37,7 +36,7 @@ namespace RaptoreumWallet.Droid
         }
 
         void InitPlugin()
-        {
+        { 
             UserDialogs.Init(this);
         }
     }

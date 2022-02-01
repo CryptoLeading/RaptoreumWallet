@@ -14,8 +14,10 @@ namespace RaptoreumWallet.Common.Styles
         public static double FontSizeDescription = 14;
         public static double FontSizeSmall = 12;
         public static double ButtonHeight = 48;
+        public static double EntryHeight = 48;
         public static double ButtonWidth = 240;
         public static int ButtonRadius = 24;
+        public static int IconButtonRadius = 16;
         public static double ContainerRadius = 6;
         public static double SeparatorSize = 0.5;
         public static double ButtonSecondaryBorderWidth = 1;
@@ -23,7 +25,7 @@ namespace RaptoreumWallet.Common.Styles
         public static double MediumIconSize = 16;
         public static double ShadowOffsetX = 0;
         public static double ShadowOffsetY = 0;
-        public static double ShadowRadius = 8;
+        public static double ShadowRadius = 1;
     }
     public class ResourceDimensions : ResourceDictionary
     {
