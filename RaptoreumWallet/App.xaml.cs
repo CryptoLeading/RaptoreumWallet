@@ -1,5 +1,4 @@
 ﻿using Acr.UserDialogs;
-using RaptoreumWallet.Api;
 using RaptoreumWallet.AppResources;
 using Prism;
 using Prism.DryIoc;
@@ -38,8 +37,7 @@ namespace RaptoreumWallet
         {
             InitializeComponent();
             VersionTracking.Track();
-            MainPage = new SendPage();
-            //var result = await NavigationService.NavigateAsync(Routes.Send);
+            var result = await NavigationService.NavigateAsync(Routes.Home);
         }
 
         protected override void OnStart()
@@ -61,7 +59,6 @@ namespace RaptoreumWallet
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             base.ConfigureModuleCatalog(moduleCatalog);
-            moduleCatalog.AddModule<RaptoreumWalletApiModule>();
             moduleCatalog.AddModule<RaptoreumWalletCommonModule>();
         }
 
@@ -82,6 +79,7 @@ namespace RaptoreumWallet
             containerRegistry.RegisterForNavigation<ConfirmPinCodePage, ConfirmPinCodeViewModel>();
             containerRegistry.RegisterForNavigation<ReceivePage, ReceiveViewModel>();
             containerRegistry.RegisterForNavigation<SendPage, SendViewModel>();
+            containerRegistry.RegisterForNavigation<HomePage, HomeViewModel>();
         }
 
         void RegisterService(IContainerRegistry containerRegistry)
@@ -107,6 +105,7 @@ namespace RaptoreumWallet
         public const string ConfirmPinCode = nameof(ConfirmPinCodePage);
         public const string Receive = nameof(ReceivePage);
         public const string Send = nameof(SendPage);
+        public const string Home = nameof(HomePage);
     }
 
     public class NavigationKey

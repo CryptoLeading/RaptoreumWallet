@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RaptoreumWallet.Views.HomePage"
+    BackgroundColor="{StaticResource BackgroundColor}"
+    xmlns:model="clr-namespace:RaptoreumWallet.Models">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style
+                TargetType="Button">
+                <Setter
+                    Property="BackgroundColor"
+                    Value="#1AFFFFFF" />
+                <Setter
+                    Property="CornerRadius"
+                    Value="16" />
+                <Setter
+                    Property="HeightRequest"
+                    Value="48" />
+                <Setter
+                    Property="Padding"
+                    Value="14" />
+                <Setter
+                    Property="WidthRequest"
+                    Value="48" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="Center" />
+                <Setter
+                    Property="VerticalOptions"
+                    Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid
+        RowSpacing="12"
+        RowDefinitions="240,*">
+        <BoxView
+            Grid.Row="1"
+            CornerRadius="24,24,0,0"
+            Color="{StaticResource SurfaceColor}" />
+        <Grid
+            RowSpacing="0"
+            RowDefinitions="*,96">
+            <BoxView
+                Grid.RowSpan="2"
+                CornerRadius="0,0,24,24">
+                <BoxView.Background>
+                    <LinearGradientBrush
+                        StartPoint="0,0.5"
+                        EndPoint="1,0.5">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop
+                                Color="#C53A17"
+                                Offset="0" />
+                            <GradientStop
+                                Color="#EB9A20"
+                                Offset="1" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+            <Image
+                Grid.RowSpan="2"
+                VerticalOptions="Start"
+                HorizontalOptions="Start"
+                Source="img_logo" />
+            <StackLayout
+                Margin="0,0,0,16"
+                HorizontalOptions="Center"
+                VerticalOptions="End">
+                <Label
+                    HorizontalOptions="Center"
+                    Style="{StaticResource DescriptionLabel}"
+                    TextColor="{StaticResource SurfaceColor}"
+                    Text="Your balance" />
+                <Label
+                    HorizontalOptions="Center"
+                    Style="{StaticResource LargeLabel}"
+                    TextColor="{StaticResource SurfaceColor}"
+                    Text="5.021 RTM" />
+                <Label
+                    HorizontalOptions="Center"
+                    Style="{StaticResource NormalLabel}"
+                    TextColor="{StaticResource SurfaceColor}"
+                    Text="$5.021" />
+            </StackLayout>
+
+            <Grid
+                ColumnSpacing="0"
+                RowSpacing="8"
+                Margin="28,8,24,0"
+                Grid.Row="1"
+                RowDefinitions="48,*"
+                ColumnDefinitions="*,*,*,*">
+                <Button
+                    ImageSource="ic_receive_white"
+                    Command="{Binding ReceiveCommand}" />
+                <Label
+                    Grid.Row="1"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource DescriptionLabel}"
+                    TextColor="{StaticResource SurfaceColor}"
+                    Text="Receive" />
+                <Button
+                    Grid.Column="1"
+                    ImageSource="ic_send_white"
+                    Command="{Binding SendCommand}" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource DescriptionLabel}"
+                    TextColor="{StaticResource SurfaceColor}"
+                    Text="Send" />
+                <Button
+                    Grid.Column="2"
+                    ImageSource="ic_address_white"
+                    Command="{Binding AddressCommand}"  />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource DescriptionLabel}"
+                    TextColor="{StaticResource SurfaceColor}"
+                    Text="Address" />
+                <Button
+                    Grid.Column="3"
+                    ImageSource="ic_setting_white"
+                    Command="{Binding SettingCommand}"  />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource DescriptionLabel}"
+                    TextColor="{StaticResource SurfaceColor}"
+                    Text="Setting" />
+            </Grid>
+        </Grid>
+        <CollectionView
+            ItemsSource="{Binding Transactions}"
+            Grid.Row="1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid
+                        RowDefinitions="32,32"
+                        RowSpacing="0"
+                        ColumnSpacing="0"
+                        ColumnDefinitions="64,*">
+                        <Frame
+                            Grid.RowSpan="2"
+                            BackgroundColor="{StaticResource GreenColor}"
+                            WidthRequest="40"
+                            HeightRequest="40"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            CornerRadius="20">
+                            <Image
+                                HeightRequest="20"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"
+                                Source="ic_receive_white">
+                                <Image.Triggers>
+                                    <DataTrigger
+                                        TargetType="Image"
+                                        Binding="{Binding TransactionType}"
+                                        Value="{Static model:TransactionType.Send}">
+                                        <Setter
+                                            Property="Source"
+                                            Value="ic_send_white" />
+                                    </DataTrigger>
+                                </Image.Triggers>
+                            </Image>
+                            <Frame.Triggers>
+                                <DataTrigger
+                                    TargetType="Frame"
+                                    Binding="{Binding TransactionType}"
+                                    Value="{Static model:TransactionType.Send}">
+                                    <Setter
+                                        Property="BackgroundColor"
+                                        Value="{StaticResource OrangeColor}" />
+                                </DataTrigger>
+                            </Frame.Triggers>
+                        </Frame>
+                        <BoxView
+                            Grid.Row="1"
+                            Grid.ColumnSpan="2"
+                            HeightRequest="1"
+                            Opacity="0.1"
+                            VerticalOptions="End"
+                            Color="#98989D" />
+                        <Label
+                            Grid.Column="1"
+                            VerticalOptions="End"
+                            Style="{StaticResource NormalLabel}"
+                            Text="Received">
+                            <Label.Triggers>
+                                <DataTrigger
+                                    TargetType="Label"
+                                    Binding="{Binding TransactionType}"
+                                    Value="{Static model:TransactionType.Send}">
+                                    <Setter
+                                        Property="Text"
+                                        Value="Sent" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Style="{StaticResource DescriptionLabel}"
+                            Text="14:00 PM 24/12/2022" />
+                        <Label
+                            Grid.Column="1"
+                            Margin="0,0,12,0"
+                            HorizontalOptions="End"
+                            VerticalOptions="End"
+                            Style="{StaticResource NormalLabel}"
+                            Text="124 RTM" />
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Margin="0,0,12,0"
+                            HorizontalOptions="End"
+                            Style="{StaticResource DescriptionLabel}"
+                            Text="$40" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
